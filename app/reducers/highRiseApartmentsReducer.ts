@@ -8,11 +8,11 @@ const highRiseApartmentsReducer = (state = initialState, action: any) => {
     case INCREMENT_APARTMENTS:
       return state + 1;
     case DECREMENT_APARTMENTS:
-      return state - 1;
+      return Math.max(state - 1, 0);
     case URBAN_SPRAWL:
       return state + 5;
     case GODZILLA_ATTACK:
-      return state - 50;
+      return Math.max(state - 50, 0);
     default:
       return state;
   }

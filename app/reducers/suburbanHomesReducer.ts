@@ -8,11 +8,11 @@ const suburbanHomesReducer = (state = initialState, action: any) => {
     case INCREMENT_SUBURBAN:
       return state + 1;
     case DECREMENT_SUBURBAN:
-      return state - 1;
+      return Math.max(state - 1, 0);
     case URBAN_SPRAWL:
-      return state - 20;
+      return Math.max(state - 20, 0);
     case GODZILLA_ATTACK:
-      return state - 5;
+      return Math.max(state - 5, 0);
     default:
       return state;
   }
